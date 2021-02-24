@@ -1,0 +1,119 @@
+.skills {
+  @include pxInRem(padding-top, 60px);
+  @include pxInRem(padding-bottom, 60px);
+  position: relative;
+  .section-container {
+    .section-skills {
+      .content-container {
+        > div {
+          @include pxInRem(padding-bottom, 15px);
+          &.balise-closing {
+            position: relative;
+            z-index: 2;
+            @media (max-width: 576px) {
+              margin-left: 0;
+            }
+          }
+          .section-name {
+            @media (max-width: 576px) {
+              margin-left: 0;
+            }
+          }
+          .section-h {
+            @media (max-width: 576px) {
+              @include pxInRem(margin-left, 25px);
+            }
+          }
+        }
+        .logos-skills {
+          width: auto;
+          position: relative;
+          @include pxInRem(margin-bottom, 35px);
+          @include responsive(margin-left, 100px, 80px, 50px);
+          @media (max-width: 576px) {
+            @include pxInRem(margin-left, 25px);
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 200%;
+            background-color: $background-light;
+            top: 0;
+            left: 0;
+          }
+          &::before {
+            content: "";
+            height: 150%;
+            width: 300%;
+            position: absolute;
+            top: 50%;
+            left: -100%;
+            background-color: $background-dark;
+          }
+          @include responsive(padding, 30px, 30px, 15px);
+          @include responsive(padding-top, 0px, 15px, 0px);
+          > div {
+            display: flex;
+            flex-wrap: wrap;
+            @include responsive(max-width, 560px, 400px, 350px);
+            width: auto;
+
+            &:last-child {
+              padding-bottom: 0;
+            }
+            svg {
+              fill: $third-color;
+              z-index: 1;
+              @include responsive(height, 50px, 40px, 30px);
+              @include responsive(width, 50px, 40px, 30px);
+              @include responsive(margin-top, 30px, 15px, 15px);
+              @include responsive(margin-right, 30px, 15px, 15px);
+              cursor: pointer;
+              &:hover {
+                fill: $primary-color;
+              }
+            }
+            &.mastery-skills {
+              @include pxInRem(padding-top, 15px);
+              flex-direction: column;
+              z-index: 2;
+              position: relative;
+              justify-content: space-between;
+              width: calc(100% - #{$px30});
+              .line-container {
+                @include pxInRem(height, 6px);
+                background-color: $background-dark;
+                @include pxInRem(border-radius, 25px);
+                width: 100%;
+                .width-mastery {
+                  height: 100%;
+                  @include pxInRem(width, 6px);
+                  background-color: $primary-color;
+                  @include pxInRem(border-radius, 25px);
+                  transition: width ease 0.5s;
+                  position: relative;
+                  svg {
+                    position: absolute;
+                    margin: 0;
+                    @include pxInRem(bottom, -7px);
+                    @include pxInRem(right, -7px);
+                    @include pxInRem(height, 20px);
+                    @include pxInRem(width, 20px);
+                    fill: $secondary-color;
+                  }
+                }
+              }
+              .language {
+                @include pxInRem(padding-bottom, 10px);
+                color: $third-color;
+                font-size: $content-size;
+                font-family: $content-font;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

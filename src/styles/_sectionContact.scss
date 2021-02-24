@@ -1,0 +1,209 @@
+.contact {
+  .section-contact {
+    height: 100%;
+    .content-container {
+      @include pxInRem(padding-bottom, 40px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      &::before {
+        content: "© 2021 - Par Marine Hansart";
+        height: $px40;
+        width: 100%;
+        background-color: $secondary-color;
+        color: $third-color;
+        font-family: $content-font;
+        font-size: $px10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+      > div {
+        @include pxInRem(padding-bottom, 15px);
+        &.balise-closing {
+          @include pxInRem(padding-top, 15px);
+          @media (max-width: 576px) {
+            margin-left: 0;
+          }
+        }
+        .section-name {
+          @include pxInRem(padding-bottom, 15px);
+          @media (max-width: 576px) {
+            margin-left: 0;
+          }
+        }
+        .section-h {
+          @media (max-width: 576px) {
+            @include pxInRem(margin-left, 25px);
+          }
+          @media (max-width: 768px) {
+            flex-direction: row;
+            > div {
+              @include pxInRem(padding-bottom, 0px);
+            }
+            .big-title {
+              @include pxInRem(padding-left, 15px);
+            }
+          }
+        }
+        &::last-child {
+          padding-bottom: 0;
+        }
+        @media (max-width: 576px) {
+          @include pxInRem(padding-bottom, 15px);
+          &::last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .text-contact {
+        margin: 0;
+        color: $third-color;
+        font-family: $content-font;
+        font-size: $content-size;
+        @include responsive(padding-left, 100px, 80px, 50px);
+        @include responsive(padding-right, 100px, 80px, 50px);
+        @media (max-width: 576px) {
+          @include pxInRem(padding-left, 25px);
+          @include pxInRem(padding-right, 25px);
+        }
+      }
+      form {
+        width: 100%;
+        @include responsive(padding-left, 100px, 80px, 50px);
+        @include responsive(padding-right, 100px, 80px, 50px);
+        @media (max-width: 576px) {
+          @include pxInRem(padding-left, 25px);
+          @include pxInRem(padding-right, 25px);
+        }
+        > div {
+          width: 100%;
+          justify-content: space-between;
+          &.text-confirm {
+            justify-content: flex-start;
+            align-items: baseline;
+            @media (max-width: 768px) {
+              flex-direction: row;
+            }
+          }
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
+          .ipt-after {
+            width: calc(50% - #{$px7});
+            height: auto;
+            position: relative;
+            @include responsive(margin-bottom, 15px, 15px, 10px);
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+            span {
+              height: 1px;
+              width: 0%;
+              position: absolute;
+              background-color: $secondary-color;
+              bottom: 0;
+              left: 0;
+              transition: width 0.3s;
+            }
+          }
+          &.txtarea-after {
+            position: relative;
+            width: 100%;
+            height: auto;
+            span {
+              height: 1px;
+              width: 0%;
+              position: absolute;
+              background-color: $secondary-color;
+              bottom: 5px;
+              left: 0;
+              transition: width 0.3s;
+            }
+          }
+          input {
+            width: 100%;
+            background-color: $background-light;
+            color: $third-color;
+            border: none;
+
+            @include responsive(padding, 30px, 22px, 15px);
+            font-size: $content-size;
+            font-family: $content-font;
+            position: relative;
+            &:focus {
+              outline: none;
+              & + span {
+                width: 100%;
+              }
+              &::placeholder {
+                opacity: 0;
+              }
+              &::after {
+                width: 100%;
+              }
+            }
+            &::placeholder {
+              color: $third-color;
+              font-size: $content-size;
+              font-family: $content-font;
+            }
+          }
+        }
+        p {
+          color: $third-color;
+          font-family: $content-font;
+          font-size: $content-size;
+          margin: $px5 0;
+        }
+        textarea {
+          width: 100%;
+          background-color: $background-light;
+          color: $third-color;
+          border: none;
+          font-size: $content-size;
+          font-family: $content-font;
+          position: relative;
+          @include responsive(padding, 30px, 22px, 15px);
+          border: none;
+          outline: none;
+          &:focus {
+            & + span {
+              width: 100%;
+            }
+            outline: none;
+            &::after {
+              width: 100%;
+            }
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+          &::placeholder {
+            color: $third-color;
+            font-size: $content-size;
+            font-family: $content-font;
+          }
+        }
+        button {
+          color: $third-color;
+          font-size: $content-size;
+          font-family: $content-font;
+          display: flex;
+          @include responsive(margin-top, 15px, 15px, 10px);
+          @include pxInRem(padding-top, 15px);
+          @include pxInRem(padding-bottom, 15px);
+          @include pxInRem(padding-left, 30px);
+          @include pxInRem(padding-right, 30px);
+          @include responsive(padding, 15px, 11px, 7px);
+          @include responsive(padding-left, 30px, 22px, 15px);
+          @include responsive(padding-right, 30px, 22px, 15px);
+        }
+      }
+    }
+  }
+}

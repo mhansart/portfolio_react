@@ -1,0 +1,145 @@
+.work {
+  @include pxInRem(padding-top, 60px);
+  @include pxInRem(padding-bottom, 60px);
+  background-color: $background-dark;
+  .section-work {
+    .content-container {
+      > div {
+        @include pxInRem(padding-bottom, 15px);
+        &.balise-closing {
+          @media (max-width: 576px) {
+            margin-left: 0;
+          }
+        }
+        .section-name {
+          @media (max-width: 576px) {
+            margin-left: 0;
+          }
+        }
+        .section-h {
+          @media (max-width: 576px) {
+            @include pxInRem(margin-left, 25px);
+          }
+        }
+      }
+      width: 100%;
+      .cube-container {
+        flex-wrap: wrap;
+        @include responsive(padding-left, 100px, 80px, 50px);
+        @include responsive(padding-right, 100px, 80px, 50px);
+        @media (max-width: 576px) {
+          flex-direction: column;
+          @include pxInRem(padding-left, 25px);
+          @include pxInRem(padding-right, 25px);
+        }
+        width: 100%;
+        justify-content: space-between;
+        position: relative;
+        > div {
+          .balise {
+            @include pxInRem(font-size, 12px);
+            @include pxInRem(margin-left, 0px);
+            .characteristic {
+              @include pxInRem(margin, 0px);
+              @include pxInRem(margin-left, 25px);
+            }
+            .balise-closing {
+              @include pxInRem(margin-left, 110px);
+            }
+          }
+          .const {
+            color: $code-color1;
+          }
+          .category {
+            color: $code-color3;
+          }
+          .balise-class-name {
+            color: $code-color2;
+          }
+          .button-class {
+            @include pxInRem(padding-top, 5px);
+            button {
+              &::before {
+                background-color: $background-dark;
+              }
+              &:last-child {
+                box-shadow: inset 0 0 0 2px $clic-color;
+                @include pxInRem(margin-left, 30px);
+                transition: background-color 0.3s;
+                &:hover {
+                  &::after {
+                    width: 100%;
+                  }
+                }
+                &::after,
+                &::before {
+                  background-color: transparent;
+                  box-shadow: none;
+                }
+                &::after {
+                  background-color: $clic-color;
+                  width: 0%;
+                  left: 0;
+                }
+              }
+              a {
+                @include pxInRem(padding, 15px);
+                @include pxInRem(padding-top, 7px);
+                @include pxInRem(padding-bottom, 7px);
+              }
+            }
+          }
+          padding: 30px 0;
+          justify-content: space-between;
+          @media (max-width: 992px) {
+            flex-direction: column;
+          }
+          .text-work {
+            h3 {
+              margin-top: 0;
+              @include pxInRem(margin-bottom, 15px);
+              @media (max-width: 992px) {
+                @include pxInRem(margin-top, 15px);
+                @include pxInRem(margin-bottom, 15px);
+              }
+            }
+            p {
+              @include pxInRem(margin-top, 5px);
+              @include pxInRem(margin-bottom, 5px);
+            }
+            width: calc(50% - #{$px15});
+            font-family: $content-font;
+            color: $third-color;
+            font-size: $content-size;
+            @media (max-width: 992px) {
+              width: 100%;
+              order: 2;
+            }
+            @include pxInRem(line-height, 25px);
+            .work-title {
+              display: block;
+              @include pxInRem(font-size, 18px);
+              font-weight: 600;
+              color: $secondary-color;
+              font-family: $title-font;
+            }
+          }
+          .one-work {
+            width: calc(50% - #{$px15});
+            @media (max-width: 992px) {
+              width: 390px;
+            }
+            @media (max-width: 500px) {
+              width: 100%;
+            }
+            img {
+              width: 100%;
+              height: auto;
+              border: 5px solid $background-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}

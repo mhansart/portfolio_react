@@ -1,0 +1,92 @@
+.about {
+  @include pxInRem(padding-top, 30px);
+  @include pxInRem(padding-bottom, 60px);
+  .section-about {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    &.section-name {
+      @include pxInRem(padding-bottom, 35px);
+    }
+    > div {
+      @include pxInRem(padding-bottom, 15px);
+      &:last-child {
+        padding-bottom: 0;
+      }
+      &.picture {
+        padding: 0;
+        width: 40%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .content-container {
+      max-width: 60%;
+      @media (max-width: 576px) {
+        max-width: 100%;
+      }
+      .section-name {
+        margin-left: 0;
+      }
+      .section-h {
+        @include responsive(margin-left, 50px, 40px, 25px);
+      }
+    }
+    .text-content {
+      @include responsive(margin-left, 50px, 40px, 25px);
+      color: $third-color;
+      font-family: $content-font;
+      font-size: $px15;
+      p {
+        line-height: 25px;
+      }
+    }
+    .script {
+      opacity: 0.5;
+      @include responsive(margin-left, 50px, 40px, 25px);
+      @include pxInRem(padding-bottom, 15px);
+      &.closing {
+        @include pxInRem(padding-bottom, 15px);
+      }
+    }
+    .array {
+      @include responsive(margin-left, 50px, 40px, 25px);
+      > div {
+        @include pxInRem(padding-bottom, 10px);
+      }
+      .characteristics {
+        @include responsive(padding-left, 155px, 100px, 95px);
+      }
+      .array-closing {
+        @include responsive(padding-left, 145px, 100px, 95px);
+      }
+      .const {
+        color: $code-color1;
+      }
+      .balise-number {
+        color: $secondary-color;
+      }
+      .category {
+        color: $code-color3;
+      }
+    }
+    .div-btn {
+      @include pxInRem(padding-bottom, 15px);
+    }
+    button {
+      display: inline-flex;
+      @include responsive(margin-left, 50px, 40px, 25px);
+    }
+  }
+}

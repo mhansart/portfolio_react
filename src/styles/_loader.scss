@@ -1,0 +1,63 @@
+@import "animations";
+
+.loader-container {
+  position: fixed;
+  width: 100%;
+  background-color: $background-dark;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .loader {
+    @include pxInRem(width, 400px);
+    @media (max-width: 578px) {
+      width: 100%;
+      @include pxInRem(padding, 15px);
+    }
+    color: $third-color;
+    font-family: $content-font;
+    .loader-bar {
+      width: 100%;
+      @include pxInRem(height, 7px);
+      background-color: $background-light;
+      @include pxInRem(border-radius, 20px);
+      .progress-bar {
+        @include pxInRem(border-radius, 20px);
+        @include pxInRem(width, 7px);
+        height: 100%;
+        background-color: $secondary-color;
+        @include animation(loadingBar, 2s);
+        animation-iteration-count: infinite;
+      }
+    }
+    .word {
+      align-items: baseline;
+      @include pxInRem(padding-bottom, 10px);
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+.points {
+  .point {
+    @include pxInRem(height, 3px);
+    @include pxInRem(width, 3px);
+    background-color: $third-color;
+    @include pxInRem(border-radius, 20px);
+    @include pxInRem(margin-left, 5px);
+    animation-iteration-count: infinite;
+    &.dot1 {
+      @include animation(dot, 1s);
+      animation-delay: 0s;
+    }
+    &.dot2 {
+      @include animation(dot, 1s);
+      animation-delay: 0.33s;
+    }
+    &.dot3 {
+      @include animation(dot, 1s);
+      animation-delay: 0.66s;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+// $px5: calculateRem(5px);
+// $px7: calculateRem(7px);
+// $px10: calculateRem(10px);
+// $px12: calculateRem(12px);
+// $px13: calculateRem(13px);
+// $px14: calculateRem(14px);
+// $px15: calculateRem(15px);
+// $px16: calculateRem(16px);
+// $px20: calculateRem(20px);
+// $px25: calculateRem(25px);
+// $px30: calculateRem(30px);
+// $px35: calculateRem(35px);
+// $px40: calculateRem(40px);
+// $px45: calculateRem(45px);
+// $px50: calculateRem(50px);
+// $px55: calculateRem(55px);
+// $px60: calculateRem(60px);
+// $px65: calculateRem(65px);
+// $px70: calculateRem(70px);
+// $px75: calculateRem(75px);
+// $px80: calculateRem(80px);
+// $px85: calculateRem(85px);
+// $px90: calculateRem(90px);
+// $px95: calculateRem(95px);
+// $px100: calculateRem(100px);
+
+$px5: 5px;
+$px7: 7px;
+$px10: 10px;
+$px12: 12px;
+$px13: 13px;
+$px14: 14px;
+$px15: 15px;
+$px16: 16px;
+$px20: 20px;
+$px25: 25px;
+$px30: 30px;
+$px35: 35px;
+$px40: 40px;
+$px45: 45px;
+$px50: 50px;
+$px55: 55px;
+$px60: 60px;
+$px65: 65px;
+$px70: 70px;
+$px75: 75px;
+$px80: 80px;
+$px85: 85px;
+$px90: 90px;
+$px95: 95px;
+$px100: 100px;

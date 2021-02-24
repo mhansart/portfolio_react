@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&family=Roboto+Mono:wght@200;300;400;600&family=Roboto:wght@300;400;700&display=swap");
+
+// fonts
+
+$content-font: "Barlow", sans-serif;
+$title-font: "Roboto", sans-serif;
+$code-font: "Roboto Mono", monospace;
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  //Default font size on html element is 100%, equivalent to 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin pxInRem($property, $size) {
+  #{$property}: $size;
+  #{$property}: calculateRem($size);
+}
+
+//font-size
+
+$content-size: calculateRem(14px);
+$balise-size: calculateRem(13px);
+$title-size: calculateRem(50px);
+$little-size: calculateRem(10px);

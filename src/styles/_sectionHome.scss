@@ -1,0 +1,69 @@
+.home {
+  @include pxInRem(padding-top, 15px);
+  @media (max-width: 576px) {
+    @include pxInRem(padding-top, 0px);
+  }
+  .section-home {
+    height: 100%;
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      > div {
+        @include pxInRem(padding-bottom, 35px);
+        &::last-child {
+          padding-bottom: 0;
+        }
+        @media (max-width: 576px) {
+          @include pxInRem(padding-bottom, 15px);
+          &::last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  .presentation {
+    @include responsive(margin-left, 100px, 80px, 75px);
+    @media (max-width: 576px) {
+      @include pxInRem(width, 210px);
+    }
+    p {
+      color: $third-color;
+      font-family: $title-font;
+      font-weight: 700;
+      @include responsive(font-size, 54px, 45px, 35px);
+      @include pxInRem(letter-spacing, 1px);
+
+      margin: 0;
+      .m {
+        display: none;
+      }
+      .my-name {
+        @include responsive(padding-left, 100px, 85px, 75px);
+        position: relative;
+        z-index: 1;
+        @media (max-width: 576px) {
+          display: flex;
+          @include pxInRem(margin-top, 15px);
+        }
+        &::before {
+          content: " ";
+          background-image: url("img/favicon.svg");
+          background-size: 100%;
+          background-repeat: no-repeat;
+          position: absolute;
+          @include responsive(height, 70px, 60px, 50px);
+          @include responsive(width, 170px, 145px, 125px);
+          @include pxInRem(bottom, 8px);
+          left: 0;
+          z-index: -1;
+        }
+      }
+    }
+  }
+  button {
+    display: inline-flex;
+    @include responsive(margin-left, 100px, 80px, 75px);
+  }
+}

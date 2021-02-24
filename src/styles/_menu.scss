@@ -1,0 +1,566 @@
+@import "animations";
+
+.menu-principal {
+  height: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: auto;
+  z-index: 100;
+  @include pxInRem(margin-left, -300px);
+  transition: all 0.7s;
+  top: 0;
+  left: 0;
+  @media (max-width: 576px) {
+    width: 100%;
+    margin-left: 0;
+    left: 100%;
+  }
+  &.show-menu {
+    margin-left: 0;
+    @media (max-width: 576px) {
+      margin-left: -100%;
+    }
+  }
+  .logo-social {
+    display: flex;
+    position: fixed;
+    @include pxInRem(width, 75px);
+    height: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include pxInRem(padding-top, 25px);
+    @include pxInRem(padding-bottom, 25px);
+    @include pxInRem(left, 0px);
+    @include pxInRem(bottom, 0px);
+    z-index: 5;
+    transition: left 0.7s, padding-bottom 0.3s;
+    &.colored {
+      left: $px5;
+      svg {
+        fill: $clic-color;
+      }
+    }
+    a {
+      height: auto;
+      @include pxInRem(width, 25px);
+      &:last-child {
+        @include pxInRem(margin-top, 30px);
+      }
+      &:hover {
+        svg {
+          fill: $clic-color;
+        }
+      }
+      svg {
+        transition: all 0.3s;
+        fill: $primary-color;
+      }
+    }
+    @media (max-width: 576px) {
+      left: CALC(100% + #{$px90});
+      &.colored {
+        left: $px5;
+      }
+    }
+  }
+  .background-logo {
+    display: none;
+    @media (max-width: 576px) {
+      display: flex;
+      height: 72px;
+      width: 110%;
+      background-color: $background-color;
+      position: fixed;
+      top: 0;
+      left: -5px;
+      transition: background-color 0.5s;
+      &.scrolling {
+        background-color: $background-dark;
+      }
+    }
+  }
+  .logo-central {
+    margin: 0;
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include pxInRem(margin-top, 15px);
+    transition: height 0.7s, width 0.7s, left 0.7s;
+    z-index: 5;
+    @include pxInRem(height, 80px);
+    @include pxInRem(width, 130px);
+    &::before {
+      content: "";
+      transition: height 0.7s, width 0.7s, left 0.7s, border-color 0.3s;
+      @include pxInRem(height, 78px);
+      @include pxInRem(width, 78px);
+      @include pxInRem(border-radius, 100px);
+      border: 1px solid $primary-color;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    svg {
+      transition: fill 0.3s, height 0.7s, width 0.7s;
+      fill: $primary-color;
+      @include pxInRem(height, 80px);
+      @include pxInRem(width, 130px);
+      position: absolute;
+    }
+    &.toLeft {
+      @include pxInRem(height, 42px);
+      @include pxInRem(width, 60px);
+      &::before {
+        border-color: $primary-color;
+        @include pxInRem(height, 42px);
+        @include pxInRem(width, 42px);
+      }
+      svg {
+        fill: $primary-color;
+        @include pxInRem(height, 42px);
+        @include pxInRem(width, 60px);
+      }
+      @include pxInRem(left, 38px);
+    }
+    @media (max-width: 576px) {
+      z-index: 1;
+      @include pxInRem(height, 42px);
+      @include pxInRem(width, 60px);
+      &::before {
+        border-color: $primary-color;
+        @include pxInRem(height, 42px);
+        @include pxInRem(width, 42px);
+      }
+      svg {
+        fill: $primary-color;
+        @include pxInRem(height, 42px);
+        @include pxInRem(width, 60px);
+      }
+      @include pxInRem(left, 38px);
+    }
+  }
+  .menu-links {
+    height: 100%;
+    z-index: 3;
+    background-color: $third-color;
+    @include pxInRem(width, 300px);
+    @include pxInRem(padding, 30px);
+    display: flex;
+    flex-direction: column;
+    @include pxInRem(padding-top, 100px);
+    @media (max-width: 576px) {
+      order: 2;
+      width: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      flex-direction: column;
+      li {
+        @include pxInRem(padding-top, 15px);
+        @include pxInRem(padding-bottom, 15px);
+        // padding: 15px 0;
+        position: relative;
+        display: block;
+        width: auto;
+      }
+      a {
+        display: inline-flex;
+        font-weight: 500;
+        font-family: $content-font;
+        font-size: $content-size;
+        text-decoration: none;
+        color: black;
+        z-index: 9;
+        position: relative;
+        &.active {
+          &::after {
+            content: ".active";
+            font-family: $code-font;
+            font-weight: 300;
+            color: $clic-color;
+            transition: all 0.3s;
+            position: absolute;
+            top: 0;
+            left: CALC(100% + #{$px10});
+            opacity: 1;
+            background-color: transparent;
+            transition: all 0s;
+          }
+          &::before {
+            display: none;
+            transition: all 0s;
+          }
+          &:hover {
+            &::after {
+              content: ".active";
+            }
+          }
+        }
+        &::before {
+          content: "";
+          height: 100%;
+          position: absolute;
+          transition: opacity 0.3s;
+          width: 100%;
+          @include pxInRem(left, 5px);
+          @include pxInRem(top, 8px);
+          background-color: $primary-color;
+          opacity: 0;
+          z-index: -1;
+        }
+        &::after {
+          content: "";
+          font-family: $code-font;
+          font-weight: 300;
+          color: $primary-color;
+          transition: opacity 0.3s;
+          position: absolute;
+          top: 0;
+          left: CALC(100% + #{$px10});
+          opacity: 0;
+        }
+        &:hover {
+          &::after {
+            content: ":hover";
+          }
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .menu-logo {
+    height: 100%;
+    @media (max-width: 576px) {
+      height: auto;
+    }
+    // padding: 35px;
+    cursor: pointer;
+    display: flex;
+    transition: all 0.7s;
+    position: relative;
+    z-index: 4;
+    @include pxInRem(width, 75px);
+    @media (max-width: 576px) {
+      position: absolute;
+      @include pxInRem(top, 36px);
+      @include pxInRem(left, -75px);
+      transform: rotate(180deg);
+      transform-origin: center;
+      align-items: flex-start;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 0%;
+      transition: all 0.5s;
+      background-color: $third-color;
+      top: 0;
+      left: 0;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+        @media (max-width: 768px) {
+          width: 0%;
+        }
+      }
+    }
+
+    .menu-word-container {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 37px;
+      @include pxInRem(margin-left, -5px);
+      transition: all 0.7s;
+      .menu-word {
+        transform: rotate(90deg);
+        color: $primary-color;
+        font-size: $little-size;
+        font-family: $title-font;
+        cursor: pointer;
+        transition: all 0.1s;
+        span {
+          transition: margin-left ease-in-out 0.3s;
+        }
+      }
+      @media (max-width: 576px) {
+        top: 100%;
+      }
+    }
+    .circle-logo {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      top: 50%;
+      transform: translateY(-50%);
+      @include pxInRem(left, 20px);
+      .circle {
+        background-color: $primary-color;
+        @include pxInRem(height, 5px);
+        @include pxInRem(width, 5px);
+        @include pxInRem(border-radius, 10px);
+        &:first-child {
+          @include pxInRem(margin-bottom, 7px);
+        }
+        &:last-child {
+          @include pxInRem(margin-top, 7px);
+        }
+      }
+      .line {
+        background-color: $primary-color;
+        @include pxInRem(height, 16px);
+        @include pxInRem(width, 1px);
+        position: absolute;
+        @include pxInRem(left, 7px);
+        transform-origin: center center;
+        &.first-line {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        &.second-line {
+          transform: rotate(45deg);
+          bottom: 0;
+        }
+      }
+      @media (max-width: 576px) {
+        top: 100%;
+      }
+    }
+
+    //Menu ouvert
+    &.opened {
+      & ~ .toLeft {
+        &::before {
+          border-color: $clic-color;
+          @media (max-width: 768px) {
+            border-color: $primary-color;
+          }
+        }
+        svg {
+          fill: $clic-color;
+          @media (max-width: 768px) {
+            fill: $primary-color;
+          }
+        }
+      }
+      .menu-word {
+        color: $clic-color;
+      }
+      @include pxInRem(margin-left, -75px);
+      @media (max-width: 576px) {
+        @include pxInRem(margin-left, 0px);
+        left: CALC(100% - #{$px75});
+      }
+      .circle-logo {
+        .circle {
+          background-color: $clic-color;
+          &.circle-decale {
+            margin-left: 0;
+          }
+          &:not(.circle-decale) {
+            @include pxInRem(margin-left, 12px);
+          }
+        }
+        .line {
+          background-color: $clic-color;
+          &.first-line {
+            transform: rotate(45deg);
+            @include pxInRem(top, 1px);
+          }
+          &.second-line {
+            transform: rotate(-45deg);
+            @include pxInRem(bottom, 1px);
+          }
+        }
+      }
+      &:hover {
+        .circle-logo {
+          .circle {
+            &:not(.circle-decale) {
+              @media (min-width: 769px) {
+                @include animation(hoverClosingCircle, 0.7s);
+              }
+            }
+          }
+          .line {
+            &.first-line {
+              @media (min-width: 769px) {
+                @include animation(hoverClosingFirstLine, 0.7s);
+              }
+            }
+            &.second-line {
+              @media (min-width: 769px) {
+                @include animation(hoverClosingSecondLine, 0.7s);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //Menu OPENING
+    &.opening {
+      & ~ .toLeft {
+        &::before {
+          border-color: $clic-color;
+          @media (max-width: 576px) {
+            border-color: $primary-color;
+          }
+        }
+        svg {
+          fill: $clic-color;
+          @media (max-width: 576px) {
+            fill: $primary-color;
+          }
+        }
+      }
+      .menu-word {
+        color: $clic-color;
+      }
+      @include pxInRem(margin-left, -75px);
+      @media (max-width: 576px) {
+        @include pxInRem(margin-left, 0px);
+        left: CALC(100% - #{$px75});
+      }
+      .circle-logo {
+        .circle {
+          background-color: $clic-color;
+          &.circle-decale {
+            @include animation(circleClosing, 0.8s);
+          }
+          &:not(.circle-decale) {
+            @include animation(circleOpening, 0.8s);
+          }
+        }
+        .line {
+          background-color: $clic-color;
+          &.first-line {
+            @include animation(clicClosingFirstLine, 0.7s);
+          }
+          &.second-line {
+            @include animation(clicClosingSecondLine, 0.7s);
+          }
+        }
+      }
+    }
+
+    //Menu fermé
+    &.closed {
+      .circle-logo {
+        .circle {
+          &.circle-decale {
+            @include pxInRem(margin-left, 12px);
+          }
+          &:not(.circle-decale) {
+            margin-left: 0;
+          }
+        }
+      }
+      &:hover {
+        & ~ .logo-social {
+          svg {
+            fill: $clic-color;
+            @media (max-width: 768px) {
+              fill: $primary-color;
+            }
+          }
+        }
+        & ~ .toLeft {
+          &::before {
+            border-color: $clic-color;
+            @media (max-width: 768px) {
+              border-color: $primary-color;
+            }
+          }
+          svg {
+            fill: $clic-color;
+            @media (max-width: 768px) {
+              fill: $primary-color;
+            }
+          }
+        }
+        .menu-word {
+          color: $clic-color;
+          @media (max-width: 768px) {
+            color: $primary-color;
+          }
+        }
+        .circle-logo {
+          .circle {
+            background-color: $clic-color;
+            @media (max-width: 768px) {
+              background-color: $primary-color;
+            }
+            &:not(.circle-decale) {
+              @media (min-width: 769px) {
+                @include animation(hoverOpeningCircle, 0.7s);
+              }
+            }
+          }
+          .line {
+            background-color: $clic-color;
+            @media (max-width: 768px) {
+              background-color: $primary-color;
+            }
+
+            &.first-line {
+              @media (min-width: 769px) {
+                @include animation(hoverOpeningFirstLine, 0.7s);
+              }
+            }
+            &.second-line {
+              @media (min-width: 769px) {
+                @include animation(hoverOpeningSecondLine, 0.7s);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    //Menu CLOSING
+    &.closing {
+      & ~ .logo-social {
+        @media (max-width: 576px) {
+          left: calc(100% + #{$px60});
+        }
+        svg {
+          fill: $clic-color;
+        }
+      }
+      .circle-logo {
+        .circle {
+          &.circle-decale {
+            @include animation(circleOpening, 0.8s);
+          }
+          &:not(.circle-decale) {
+            @include animation(circleClosing, 0.8s);
+          }
+        }
+        .line {
+          &.first-line {
+            @include animation(clicOpeningFirstLine, 0.7s);
+          }
+          &.second-line {
+            @include animation(clicOpeningSecondLine, 0.7s);
+          }
+        }
+      }
+    }
+  }
+}
