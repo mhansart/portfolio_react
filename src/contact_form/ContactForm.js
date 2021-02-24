@@ -26,7 +26,7 @@ function ContactForm() {
       data.append('email', email);
       data.append('name', name);
       data.append('message', description);
-      ajaxPost('http://localhost/mail-service/mail.php?task=write', data)
+      ajaxPost('mail.php?task=write', data)
         .then((response) => {
           console.log(response);
           if (response === 'success') {
