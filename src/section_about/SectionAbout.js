@@ -5,8 +5,8 @@ import Bouton from '../bouton/Bouton';
 function SectionAbout() {
   return (
     <Section section="about" extremite={false} first={false}>
-      <div className="picture">
-        {/* <img src="frame01.2.png" alt="Marine Hansart" /> */}
+      <div className="picture d-flex" data-aos="fade-up">
+        <img src="marinehansart.jpg" alt="Marine Hansart" />
       </div>
       <div className="content-container">
         <Title titleBalise="a-propos" title="À propos" first={false} />

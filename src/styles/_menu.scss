@@ -22,6 +22,62 @@
       margin-left: -100%;
     }
   }
+  .download-cv {
+    flex-direction: column;
+    font-family: $content-font;
+    @include pxInRem(margin-top, 30px);
+    @include pxInRem(width, 42px);
+    @include pxInRem(height, 32px);
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    p {
+      margin: 0;
+      font-size: $balise-size;
+      font-weight: 500;
+    }
+    &::before {
+      content: "";
+      height: 100%;
+      position: absolute;
+      transition: opacity 0.3s;
+      width: 100%;
+      @include pxInRem(left, 5px);
+      @include pxInRem(top, 8px);
+      background-color: $primary-color;
+      opacity: 0;
+      z-index: -1;
+    }
+    &::after {
+      content: "";
+      font-family: $code-font;
+      font-weight: 300;
+      color: $primary-color;
+      transition: opacity 0.3s;
+      position: absolute;
+      top: 0;
+      left: CALC(100% + #{$px10});
+      opacity: 0;
+      @include pxInRem(padding-top, 14px);
+      font-size: $content-size;
+    }
+    &:hover {
+      &::after {
+        content: ".download()";
+      }
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+    svg {
+      @include pxInRem(width, 30px);
+      @include pxInRem(padding-bottom, 1px);
+      @include pxInRem(height, 25px);
+    }
+  }
   .logo-social {
     display: flex;
     position: fixed;
@@ -82,6 +138,7 @@
     }
   }
   .logo-central {
+    cursor: pointer;
     margin: 0;
     position: fixed;
     top: 0px;
@@ -91,13 +148,14 @@
     align-items: center;
     justify-content: center;
     @include pxInRem(margin-top, 15px);
-    transition: height 0.7s, width 0.7s, left 0.7s;
+    transition: height 0.7s, width 0.7s, left 0.7s, margin-top 0.7s;
     z-index: 5;
     @include pxInRem(height, 80px);
     @include pxInRem(width, 130px);
     &::before {
       content: "";
-      transition: height 0.7s, width 0.7s, left 0.7s, border-color 0.3s;
+      transition: height 0.7s, width 0.7s, left 0.7s, border-color 0.3s,
+        margin-top 0.7s;
       @include pxInRem(height, 78px);
       @include pxInRem(width, 78px);
       @include pxInRem(border-radius, 100px);
@@ -115,10 +173,12 @@
       position: absolute;
     }
     &.toLeft {
-      @include pxInRem(height, 42px);
-      @include pxInRem(width, 60px);
+      @include pxInRem(margin-top, 0px);
+      @include pxInRem(height, 72px);
+      @include pxInRem(width, 75px);
       &::before {
         border-color: $primary-color;
+        @include pxInRem(margin-top, 15px);
         @include pxInRem(height, 42px);
         @include pxInRem(width, 42px);
       }

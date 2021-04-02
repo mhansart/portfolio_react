@@ -1,6 +1,6 @@
 import { ReactComponent as Github } from './svg/github.svg';
 import { ReactComponent as Git } from './svg/git.svg';
-import { ReactComponent as Angular } from './svg/angular.svg';
+import { ReactComponent as Typescript } from './svg/typescript.svg';
 import { ReactComponent as Animate } from './svg/animate.svg';
 import { ReactComponent as Bootstrap } from './svg/bootstrap.svg';
 import { ReactComponent as Css } from './svg/css.svg';
@@ -17,7 +17,7 @@ import { ReactComponent as Sass } from './svg/sass.svg';
 import { ReactComponent as Wp } from './svg/wordpress.svg';
 import { ReactComponent as Xd } from './svg/xd.svg';
 import { ReactComponent as Php } from './svg/php.svg';
-import { ReactComponent as Phaser } from './svg/phaser.svg';
+import { ReactComponent as Nodejs } from './svg/nodejs.svg';
 
 const logos = {
   langages: [{
@@ -42,7 +42,7 @@ const logos = {
     nom: 'Json', logo: Json, maitrise: 7.1, id: 6,
   },
   {
-    nom: 'Angular', logo: Angular, maitrise: 1, id: 7,
+    nom: 'Typescript', logo: Typescript, maitrise: 6.5, id: 7,
   },
   {
     nom: 'Php', logo: Php, maitrise: 8.2, id: 8,
@@ -51,7 +51,7 @@ const logos = {
     nom: 'MySql', logo: Mysql, maitrise: 7.6, id: 9,
   },
   {
-    nom: 'Phaser', logo: Phaser, maitrise: 7, id: 10,
+    nom: 'NodeJs', logo: Nodejs, maitrise: 6.9, id: 10,
   }],
   outils: [
     {

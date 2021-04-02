@@ -18,7 +18,7 @@ function SectionWork() {
               />
             </div>
             <div className="text-work">
-              <h3 className="work-title">Jolly Seed</h3>
+              <div className="work-title">Jolly Seed</div>
               <p>Site réalisé à la moitié de la formation Front-End Developper chez Interface3. Projet de groupe (3 personnes).
                 <span className="bold">Connectez-vous</span> pour en voir plus !
               </p>
@@ -34,7 +34,7 @@ function SectionWork() {
           </div>
           <div className="d-flex w-100" data-aos="fade-up">
             <div className="text-work">
-              <h3 className="work-title">Skywalkers - Ultimate mixed team</h3>
+              <div className="work-title">Skywalkers - Ultimate mixed team</div>
               <p>Single page application réalisée pour mon équipe d&apos;<span className="bold">Ultimate Frisbee</span>. Le design n&apos;est pas le mien, juste le code.</p>
               <p className="bold">Html, Scss, React, Javascript, React-router</p>
               <div className="d-flex button-class">
@@ -59,7 +59,7 @@ function SectionWork() {
               />
             </div>
             <div className="text-work">
-              <h3 className="work-title">Hackerflix</h3>
+              <div className="work-title">Hackerflix</div>
               <p>Application regroupant tous les <span className="bold">films parlant d&apos;informatique</span>. Vous pouvez les <span className="bold">trier</span> suivant plusieurs critères, les <span className="bold">liker</span>, et le carrousel affiche les films en <span className="bold">fonction de vos affinités</span>.</p>
               <p className="bold">Html, Scss, Javascript</p>
               <div className="d-flex button-class">
@@ -70,7 +70,7 @@ function SectionWork() {
           </div>
           <div className="d-flex w-100" data-aos="fade-up">
             <div className="text-work">
-              <h3 className="work-title">Balise-Man</h3><p>Jeu réalisé en groupe, en 2 jours et demi, dans le cadre du <span className="bold">hackathon</span> d&apos;interface3 sur le thème &quot;Apprendre le code de manière ludique&quot;. </p>
+              <div className="work-title">Balise-Man</div><p>Jeu réalisé en groupe, en 2 jours et demi, dans le cadre du <span className="bold">hackathon</span> d&apos;interface3 sur le thème &quot;Apprendre le code de manière ludique&quot;. </p>
               <p className="bold">Html, Scss, Javascript, Jquery</p>
               <div className="d-flex button-class">
                 <Bouton link="https://emontaigne.github.io/hackathon_if3/" content="Le site" target />

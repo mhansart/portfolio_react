@@ -94,7 +94,7 @@ body {
 button {
   @include pxInRem(border-radius, 100px);
   border: none;
-  box-shadow: inset 0 0 0 2px $secondary-color;
+  box-shadow: inset 0 0 0 0px $secondary-color;
   cursor: pointer;
   position: relative;
   background-color: transparent;
@@ -103,6 +103,26 @@ button {
   justify-content: center;
   z-index: 2;
   overflow: hidden;
+  transition: box-shadow 0.5s linear 0.2s;
+  &:disabled {
+    color: rgb(107, 105, 105);
+    background-color: rgb(146, 144, 144);
+    box-shadow: inset 0 0 0 2px rgb(146, 144, 144);
+    &::after,
+    &::before {
+      background-color: rgb(146, 144, 144);
+      box-shadow: inset 0 0 0 2px rgb(146, 144, 144);
+      width: 100%;
+    }
+    &:hover {
+      &::after,
+      &::before {
+        background-color: rgb(146, 144, 144);
+        box-shadow: inset 0 0 0 2px rgb(146, 144, 144);
+        width: 100%;
+      }
+    }
+  }
   &::after {
     content: "";
     background-color: $clic-color;
@@ -111,7 +131,7 @@ button {
     right: 0;
     width: 100%;
     height: 100%;
-    transition: width 0.4s;
+    transition: width 0.5s;
     z-index: -1;
     box-shadow: 0 0 0 2px $clic-color;
     @include pxInRem(border-radius, 100px);
@@ -122,18 +142,18 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 110%;
-    height: 110%;
-    transition: width 0.3s, box-shadow 0.6s;
-    transition-delay: 0.3s;
+    width: 100%;
+    height: 100%;
+    transition: width 0.5s;
+    transition-delay: 0.15s;
     z-index: -1;
-    box-shadow: 0 0 0 3px $background-color;
     @include pxInRem(border-radius, 100px);
   }
   &:focus {
     outline: none;
   }
   &:hover {
+    box-shadow: inset 0 0 0 2px $secondary-color;
     &::after,
     &::before {
       width: 0;
@@ -185,4 +205,37 @@ button {
   &.body {
     opacity: 0.5 !important;
   }
+}
+footer {
+  height: $px40;
+  margin: auto;
+  background-color: $secondary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin: 0;
+    color: $third-color;
+    font-family: $content-font;
+    font-size: $px10;
+  }
+}
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
 }

@@ -4,7 +4,7 @@ import Title from '../title/Title';
 
 function SectionContact() {
   return (
-    <Section section="contact" extremite first={false}>
+    <Section section="contact" extremite first>
       <div className="content-container">
 
         <Title titleBalise="contact" title="Contact" first={false} />

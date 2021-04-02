@@ -1,5 +1,5 @@
 function Title({ first, titleBalise, title }) {
-  const delayBalise = first ? 2200 : 100;
+  const delayBalise = first ? 2050 : 100;
   const appearBalise = first ? 'fade-right' : 'fade-up';
   return (
     <div>

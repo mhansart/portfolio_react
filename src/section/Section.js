@@ -13,6 +13,9 @@ function Section({
   } else if (first) {
     h = size;
   }
+  if (section === 'contact' && window.innerHeight < 550) {
+    h = '';
+  }
   window.addEventListener('resize', () => {
     const windowHeight = window.innerHeight;
     setSize(windowHeight);

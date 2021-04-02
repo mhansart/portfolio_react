@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { ReactComponent as MarineLogo } from './favicon.svg';
 import { ReactComponent as GithubLogo } from './github.svg';
 import { ReactComponent as LinkedinLogo } from './linkedin.svg';
+import { ReactComponent as Download } from './download.svg';
 
 function Menu() {
   const h = window.innerHeight;
@@ -67,37 +68,45 @@ function Menu() {
       }
     }, 600);
   }
+  const toTop = () => {
+    document.body.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  };
 
   return (
-    <div style={{ height: h }} className="menu-principal" ref={menuPrincipal}>
+    <header style={{ height: h }} className="menu-principal" ref={menuPrincipal}>
       <div className="menu-links">
         <ul>
           <li>
-            <a href="#home" className="home-link link-menu active" onClick={showMenu}>
+            <a href="#home" className="home-link link-menu active" alt="Lien vers accueil" onClick={showMenu}>
               ACCUEIL
             </a>
           </li>
           <li>
-            <a href="#about" className="home-link link-menu" onClick={showMenu}>
+            <a href="#about" className="home-link link-menu" alt="Lien vers à propos" onClick={showMenu}>
               À PROPOS
             </a>
           </li>
           <li>
-            <a href="#skills" className="home-link link-menu" onClick={showMenu}>
+            <a href="#skills" className="home-link link-menu" alt="lien vers compétences" onClick={showMenu}>
               COMPÉTENCES
             </a>
           </li>
           <li>
-            <a href="#work" className="home-link link-menu" onClick={showMenu}>
+            <a href="#work" className="home-link link-menu" alt="Lien vers Travail" onClick={showMenu}>
               MON TRAVAIL
             </a>
           </li>
           <li>
-            <a href="#contact" className="home-link link-menu" onClick={showMenu}>
+            <a href="#contact" className="home-link link-menu" alt="Lien vers contact" onClick={showMenu}>
               CONTACT
             </a>
           </li>
         </ul>
+        <a href="cv_marinehansart.pdf" className="d-flex download-cv" download><Download /><p>Mon CV</p></a>
       </div>
       <div className="menu-logo closed" ref={menuLogo} onClick={showMenu}>
         <div className="circle-logo">
@@ -116,20 +125,19 @@ function Menu() {
           </div>
         </div>
       </div>
-      <div className="background-logo" ref={background} />
-      <h1 className="logo-central" ref={myLogo}>
-        <MarineLogo />
+      <div className="background-logo" ref={background} onClick={toTop} />
+      <h1 className="logo-central" ref={myLogo} onClick={toTop}>
         <MarineLogo />
       </h1>
       <div className="logo-social" ref={socialLogo}>
-        <a target="_blank" rel="noreferrer" href="https://github.com/mhansart">
+        <a target="_blank" rel="noreferrer" alt="Profil Github" href="https://github.com/mhansart">
           <GithubLogo />
         </a>
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/marine-hansart-6a860310a/">
+        <a target="_blank" rel="noreferrer" alt="Page Linkedin de Marine Hansart" href="https://www.linkedin.com/in/marine-hansart-6a860310a/">
           <LinkedinLogo />
         </a>
       </div>
-    </div>
+    </header>
   );
 }
 export default Menu;

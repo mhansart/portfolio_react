@@ -9,13 +9,13 @@ import reportWebVitals from './reportWebVitals';
 import Loader from './loader/Loader';
 
 const Portfolio = () => {
-  const [isLoading, setIsLoaded] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [scroll, setScroll] = useState('hidden');
   document.body.style.overflowY = scroll;
 
   useEffect(() => {
     setTimeout(() => {
-      setIsLoaded(false);
+      setIsLoading(false);
       setScroll('scroll');
     }, 1800);
   }, []); // here

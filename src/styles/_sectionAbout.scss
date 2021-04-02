@@ -18,22 +18,28 @@
       }
       &.picture {
         padding: 0;
-        width: 40%;
-        display: inline-flex;
+        @include pxInRem(padding-right, 30px);
+        @include pxInRem(padding-bottom, 15px);
+        width: 35%;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        @media (max-width: 768px) {
-          width: 100%;
-        }
         img {
           width: 100%;
           height: auto;
         }
+        @media (max-width: 768px) {
+          @include pxInRem(padding-right, 0px);
+          margin: auto;
+          width: 40%;
+        }
       }
     }
     .content-container {
+      width: 60%;
       max-width: 60%;
-      @media (max-width: 576px) {
+      @media (max-width: 768px) {
+        width: 100%;
         max-width: 100%;
       }
       .section-name {

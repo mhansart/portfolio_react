@@ -10,6 +10,7 @@ import SectionAbout from './section_about/SectionAbout';
 import SectionSkills from './section_skills/SectionSkills';
 import SectionWork from './section_work/SectionWork';
 import SectionContact from './section_contact/SectionContact';
+import Footer from './footer/Footer';
 
 function App() {
   const [isReady, setIsReady] = useState(false);
@@ -91,6 +92,7 @@ function App() {
       <SectionSkills />
       <SectionWork />
       <SectionContact />
+      <Footer />
     </div>
   );
 }

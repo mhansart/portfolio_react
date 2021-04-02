@@ -122,6 +122,8 @@
               font-weight: 600;
               color: $secondary-color;
               font-family: $title-font;
+              @include pxInRem(margin-top, 15px);
+              @include pxInRem(margin-bottom, 15px);
             }
           }
           .one-work {

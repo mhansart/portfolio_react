@@ -2,25 +2,13 @@
   .section-contact {
     height: 100%;
     .content-container {
-      @include pxInRem(padding-bottom, 40px);
       display: flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      &::before {
-        content: "© 2021 - Par Marine Hansart";
-        height: $px40;
-        width: 100%;
-        background-color: $secondary-color;
-        color: $third-color;
-        font-family: $content-font;
-        font-size: $px10;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+      .points {
+        align-items: flex-end;
+        padding-bottom: 3px;
       }
       > div {
         @include pxInRem(padding-bottom, 15px);
@@ -79,6 +67,15 @@
         @media (max-width: 576px) {
           @include pxInRem(padding-left, 25px);
           @include pxInRem(padding-right, 25px);
+        }
+        svg {
+          @include pxInRem(height, 12px);
+          @include pxInRem(width, 12px);
+          fill: $code-color3;
+          @include pxInRem(margin-right, 5px);
+        }
+        .text-sending {
+          @include pxInRem(margin-left, 15px);
         }
         > div {
           width: 100%;
@@ -161,6 +158,7 @@
           margin: $px5 0;
         }
         textarea {
+          flex-grow: 1;
           width: 100%;
           background-color: $background-light;
           color: $third-color;
@@ -194,6 +192,7 @@
           font-size: $content-size;
           font-family: $content-font;
           display: flex;
+          transition: box-shadow 0.5s linear 0.2s;
           @include responsive(margin-top, 15px, 15px, 10px);
           @include pxInRem(padding-top, 15px);
           @include pxInRem(padding-bottom, 15px);
